@@ -2,7 +2,7 @@
 
 Summary of the rules for the Fletcher Pratt Naval Wargame.
 
-## Source
+## SOURCE
 
 This is a summary of a selected part of the rules from
 *[Fletcher Pratt's Naval Wargame Wargaming with model ships
