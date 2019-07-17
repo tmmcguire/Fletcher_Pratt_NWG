@@ -1,0 +1,293 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{bookman}
+\usepackage[T1]{fontenc}
+\usepackage[pdfusetitle]{hyperref}
+% \usepackage{multicol}
+\usepackage{setspace}
+\usepackage{siunitx}
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\large\bf}
+  {Rule \thesection: }
+  {0em}{}
+\renewcommand*\sectionautorefname{Rule}
+
+\onehalfspacing
+
+\begin{document}
+
+\title{{\small A Brief Summary of} \\ Fletcher Pratt's Naval Wargame}
+\author{Tommy M. McGuire}
+\date{13 Jul 2019}
+
+\maketitle
+
+Being a short introduction to the best rules for a wargame of naval miniatures ever created.
+
+% \begin{multicols}{2}
+
+\section*{Introduction}
+
+\section{The apparatus}
+
+\begin{itemize}
+\item \textbf{Players.}
+  No game is complete without one or more players.
+\item \textbf{Referees.}
+  Yes, the Fletcher Pratt game does need referees. If none are
+  available, other players can act as referees. For example, one player
+  fires their ship's guns and another player resolves the results.
+\item \textbf{Ship models.}
+  The original scale used for ships was 1:600 (yes, 1:600; \emph{Bismark}
+  would be about 16'' or 42cm long); 1:1200 is pretty reasonable and I
+  would suspect 1:2400 is probably the limit. 1:6000 may cause issues
+  with firing (See \autoref{rule3shooting}).
+\item \textbf{Playing surface.}
+  This is a naval game: any largish, reasonably flat surface will
+  likely work. For ``largish'', consider that the initial salvos of
+  the Battle of the Denmark Strait took place at 26,500~yards or
+  13$\frac{1}{4}$~nautical miles. The large games during WWII were
+  held in a ballroom, using a scale of approximately 1:3600. In this
+  scale, the Denmark Strait initial range would be a little over 22',
+  265'', or 670cm. Pratt's original games took place on his apartment
+  floor, using a scale of approximately 1:9000; that is about 9', 106'',
+  or 270cm. Donald Featherstone's variant uses a scale of 1:18,000:
+  4$\frac{1}{2}$', 53'', or 135cm. In any case, the game scale will need
+  to be larger than that of the ship models, but not so large as to make
+  the ship spacing look ridiculous. In this summary, I'm going to use
+  full-scale measurements with translations of important measures
+  into those three scales, which I will term ``large'', ``medium'', and
+  ``small''.
+\item \textbf{Ship cards.}
+  Each ship a paper representation of its capabilities as well as
+  ability to take damage. See the details below.
+\item \textbf{Firing arrows.}
+  The Fletcher Pratt Wargame involves no randomness. Instead, firing
+  is handled by the player laying out a marker showing the direction
+  of fire and including the estimated range and which of the player's
+  ship's guns is firing. See \autoref{rule3shooting} for the details,
+  but a supply of paper markers is necessary for each player.
+
+  Pratt's original game used tacks or pins to secure the firing arrows
+  to the surface (that would be the ballroom floor). You may not want to
+  do the same in your games. However, the firing arrows need to be secured to the
+  surface by the players to supply the direction of aim for the referees.
+\item \textbf{Miscellaneous.}
+  \emph{A stopwatch or clock:} Some of the phases in turns are timed, to
+  maintain the flow of the game as well as to emphasize the stress of
+  battle.
+  \emph{Distance measuring devices:} such as tape measures. Yes, this
+  is a miniatures game; players will need to measure movement distances
+  and referees will need to measure actual firing distances.
+  \emph{Shell splash markers:} Something to indicate where a ship's
+  volley landed. One option is upturned golf tees, white for misses and
+  red for hits.
+\end{itemize}
+
+\subsection*{The ship card}
+
+Each ship needs a record containing the following information:
+\begin{itemize}
+\item The ship's displacement.
+\item Number and size of all guns in the ship's primary, secondary, and tertiary batteries as well as the number of anti-aircraft guns, torpedo tubes, and aircraft carried.
+\item Belt, deck, and turret armor depth.
+\item Maximum speed.
+\item Point value.
+\item The schedule of damage and its effects on the ship.
+\end{itemize}
+
+The point value is calculated using the ship's armaments, armor,
+speed, and displacement. It is used both to balance scenarios and to
+calculate the damage schedule. For the latter, the point value is
+divided by speed of the ship to determine how incoming shells cause
+propulsion damage. Likewise, the point value is divided by the number of
+primary guns to determine when guns are taken out of action. See
+\autoref{laargentinadamageschedule} for an example.
+
+\begin{table*}
+  \caption{\emph{La Argentina} (23,034 points) damage schedule.}
+  \label{laargentinadamageschedule}
+  \centering
+  \begin{tabular}{rl|rl|rl}
+   \textbf{Damage} & \textbf{Remaining} & \textbf{Damage} & \textbf{Remaining} & \textbf{Damage} & \textbf{Remaining} \\
+      0 & 31 kn      & 11145 & 14 kn           & ...   & ...  \\
+    743 & 30 kn      & 11516 & 2 4'' guns      & 19575 & 4 kn \\
+   1486 & 29 kn      & 11517 & 3 torpedo tubes & 20318 & 3 kn \\
+   2229 & 28 kn      & 11888 & 13 kn           & 20472 & 1 6'' gun \\
+   2259 & 8 6'' guns & 12631 & 12 kn           & 21061 & 2 kn \\
+   2972 & 27 kn      & 12795 & 4 6'' guns      & 21804 & 1 kn \\
+   ...  & ...        & 13374 & 11 kn           & 23034 & wrecked
+  \end{tabular}
+\end{table*}
+
+Ship cards and a spreadsheet for creating them are available from the web page for the book, 
+\href{http://www.wargaming.co/recreation/details/fpnaval.htm}
+  {\emph{Fletcher Pratt's Naval Wargame Wargaming with model ships 1900-1945}},
+at the History of Wargaming Project.
+
+\section{Moving}
+
+One knot is 1 nautical mile, or 2000 yards, per hour. Each turn is
+approximately 3$\frac{3}{4}$ minutes. As a result, each ship can
+move a maximum of 125 scale yards per turn, per knot of speed it has
+remaining. (1$\frac{1}{4}$'' at large scale, $\frac{1}{2}$'' at medium,
+and $\frac{1}{4}$'' at small. (Call it 3cm, 1cm, and 5mm in Roman
+Catholic.))
+
+For example, \emph{La Argentina}, capable of 31 knots, moves at most
+3,875 yards per turn. At large scale, that is $38\frac{3}{4}$'' or 93cm,
+$15\frac{1}{2}$'' or 31cm at medium, and $7\frac{3}{4}$'' or 15.5cm at
+small.
+
+At a minimum, a ship that can do so must move at least 2 knots.
+
+Each ship can turn up to \ang{45} before moving and again up to \ang{45} after
+moving.
+
+\section{Shooting}
+\label{rule3shooting}
+
+Gunfire is handled through the combination of player skill and referee measurement.
+
+\subsection*{Player skill}
+
+Each player firing lays a firing arrow at the bow or stern of their
+ship, \emph{accurately} pointed towards the target, and records the
+player's estimate of the range to the target (in scale measurements)
+and the number and size of guns firing. The penalties for doing so
+incorrectly are:
+\begin{itemize}
+\item \textbf{Firing beyond the gun's extreme range:} The shot does not
+count and the firing ship takes damage equivalent to one hit from the
+firing gun. For gun ranges, see \autoref{gunnerydamageandranges}.
+\item \textbf{Firing guns that do not bear:} Shots that are masked by
+the ship's superstructure (firing a stern-facing turret at a target off
+the ship's bow, for example) do not count.
+\item \textbf{Firing \emph{through} another ship:} The shot does not
+count and the firing ship takes damage equivalent to one hit from the
+firing gun. A large ship such as a battleship or cruiser \emph{can} fire
+over a small ship such as a destroyer.
+\end{itemize}
+(This is where 1:6000 ship models have a problem, by the way. They are
+too dang small to aim firing arrows at precisely.)
+
+\subsection*{Referee measurement}
+
+\begin{table*}
+  \caption{\emph{La Argentina} 9 gun broadside at 12,000 yards. Scale ranges heavily rounded.}
+  \label{laargentinabroadside}
+  \centering
+  \begin{tabular}{rl|ll|ll|ll}
+  & & \multicolumn{6}{c}{\textbf{Scale}} \\
+  \textbf{Impacts} &
+  \textbf{Distance} &
+  \multicolumn{2}{c}{\textbf{Large}} &
+  \multicolumn{2}{c}{\textbf{Medium}} &
+  \multicolumn{2}{c}{\textbf{Small}} \\
+  2 shells & 12,000 yd & 120'' & 305cm & 48''   & 122cm & 24''    & 61cm \\
+  1 shell  & 11,900 yd & 119'' & 302cm & 47.5'' & 121cm & 23.75'' & 60.5cm \\
+  1 shell  & 12,100 yd & 121'' & 308cm & 48.5'' & 123cm & 24.25'' & 61.5cm \\
+  1 shell  & 11,800 yd & 118'' & 299cm & 47''   & 120cm & 23.5''  & 60cm \\
+  1 shell  & 12,200 yd & 122'' & 311cm & 49''   & 124cm & 24.5''  & 62cm \\
+  1 shell  & 11,700 yd & 117'' & 296cm & 46.5'' & 119cm & 23.25'' & 59.5cm \\
+  1 shell  & 12,300 yd & 123'' & 314cm & 49.5'' & 125cm & 24.75'' & 62.5cm \\
+  1 shell  & 11,600 yd & 116'' & 293cm & 46''   & 118cm & 23''    & 59cm \\
+  \end{tabular}
+\end{table*}
+
+The referee extends a straight line from the end of the firing arrow
+closest to the ship, along the line of the arrow, for the distance of
+the player's estimated range. This gives the center of the salvo's
+impact. Pratt used two pins (or tacks) to anchor the firing arrows, and
+ran the line along the two pins.
+
+Two shots from the salvo fall at this center point. The next shot falls
+100 yards closer to the firer, the next 100 yards farther from the
+center point, then 200 yards closer, then 200 yards farther away, and so on.
+
+For example, suppose \emph{La Argentina} fires a broadside of its 9 6''
+guns at a target 12,000 yards away. Two shells land at 12,000 yards, one
+shell lands at 11,900 yards, one at 12,100 yards, one at 11,800 yards,
+one at 12,200 yards, 11,700 yards, 12,300 yards, and 11,600 yards. See
+\autoref{laargentinabroadside} for the distances in scale terms. (At
+1:18,000 scale, you may want to replace upturned golf tees with map pins
+or something.)
+
+Hits are recognized as all shots landing on the ship as well as shots
+not more than 100 yards beyond it. Shots falling short do not hit. For
+damage resolution, see \autoref{rule4armor}.
+
+\section{Armor}
+\label{rule4armor}
+
+\begin{table*}
+  \caption{1900--1945 Gunnery: Damage and ranges. See \autoref{scaledistanceconversions} for the factors to convert yards to various scales.}
+  \label{gunnerydamageandranges}
+  \centering
+  \begin{minipage}{6in}
+  \begin{tabular}{lrrr|lrrr}
+               &                 & \multicolumn{2}{c}{\textbf{Range (yards)}} &
+               &                 & \multicolumn{2}{c}{\textbf{Range (yards)}} \\
+  \textbf{Gun} & \textbf{Damage} & \textbf{Old guns\footnote{WWI-era}} & \textbf{New guns\footnote{WWII-era}} &
+  \textbf{Gun} & \textbf{Damage} & \textbf{Old guns} & \textbf{New guns} \\
+  37mm         &     23 & 7500   & 7500         &  5.9in        &    490 & 25,000    & 34,000       \\
+  40mm         &     26 & 7500   & 7500         &  6in          &    500 & 25,000    & 34,000       \\
+  47mm         &     38 & 7500   & 7500         &  6.1in        &    550 &           & 34,500       \\
+  57mm         &     45 & 7500   & 7500         &  7.5in        &    880 & 32,500    & 37,500       \\
+  2.6in        &     60 & 7500   & 7500         &  7.6in        &    940 & 32,500    &              \\
+  3in          &     90 & 8750   & 10,000       &  8in          &   1150 & 32,500    & 40,000       \\
+  3.1in        &    100 &        & 12,500       &  8.2in        &   1300 & 34,000    &              \\
+  3.4in        &    105 & 10,000 & 12,500       &  9.2in        &   1500 & 34,000    &              \\
+  3.5in        &    110 &        & 12,500       &  9.4in        &   1650 & 35,000    &              \\
+  3.9in        &    152 & 11,250 & 17,500       &  10in         &   1960 & 35,000    & 40,000       \\
+  4in          &    160 & 12,500 & 17,500       &  11in         &   2600 & 37,500    & 41,000       \\
+  4.1in        &    192 & 15,000 & 20,000       &  12in         &   3700 & 32,500    & 41,000       \\
+  4.5in        &    212 &        & 25,000       &  12.6in       &   4700 &           & 41,500       \\
+  4.7in        &    244 & 17,500 & 31,500       &  13in         &   5150 & 34,000    & 42,000       \\
+  5in          &    266 & 18,750 & 31,500       &  13.4in       &   5200 &           & 41,500       \\
+  5.1in        &    352 &        & 32,000       &  13.5in       &   5300 &           & 41,250       \\
+  5.25in       &    372 &        & 32,000       &  14in         &   6250 &           & 42,000       \\
+  5.3in        &    390 &        & 32,000       &  15in         &   8550 &           & 42,000       \\
+  5.5in        &    404 & 20,000 & 32,500       &  16in         & 10,550 &           & 42,500       \\
+               &        &        &              &  18in         & 13,000 &           & 42,500  
+  \end{tabular}
+  \end{minipage}
+\end{table*}
+
+\begin{table*}
+  \caption{Scale distance conversions: yards to scale inches/centimeters.}
+  \label{scaledistanceconversions}
+  \centering
+  \begin{tabular}{cc|cc|cc}
+  \multicolumn{2}{c}{\textbf{Large}} & \multicolumn{2}{c}{\textbf{Medium}} & \multicolumn{2}{c}{\textbf{Small}} \\
+  \textbf{in} & \textbf{cm} & \textbf{in} & \textbf{cm} & \textbf{in} & \textbf{cm} \\
+  $\div 100$  & $\div 40$   & $\div 250$  & $\div 100$   & $\div 500$   & $\div 200$ 
+  \end{tabular}
+\end{table*}
+
+The first step in resolving damage is to determine if the shot has penetrated the relevant armor.
+\begin{itemize}
+\item Hits directly falling on turrets are compared to turret armor.
+In addition, if the hit penetrates the armor then the turret is out of
+action, reducing the number of guns available in addition to normal
+damage computation.
+\item If the ship is broadside to the direction of fire, hits are
+compared to belt armor.
+\item If the ship is bow- or stern-on to the direction of fire, hits are
+compared to deck armor.
+\end{itemize}
+
+\section*{The rest: Torpedoes, submarines, airplanes, smoke screens, and mines}
+
+The rules used by Fletcher Pratt during WWII handled torpedoes, smoke
+screens, and mines very well; airplanes less so; and submarines somewhat
+poorly. For simplicity of this summary (and to encourage you to buy the
+book from
+\href{http://www.wargaming.co/recreation/details/fpnaval.htm}{The History of Wargaming Project},
+I have not included the rules for those in this summary.
+
+% \end{multicols}
+
+\end{document}
